@@ -1,0 +1,13 @@
+.slider {
+  &-container {
+    @extend %slider-container;
+  }
+
+  &-wrapper {
+    @extend %slider-wrapper;
+  }
+
+  &-slide {
+    @extend %slider-slide;
+  }
+}

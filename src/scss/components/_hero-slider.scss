@@ -1,0 +1,124 @@
+.hero {
+  &-slider {
+    @extend %slider-container;
+  }
+
+  &-wrapper {
+    @extend %slider-wrapper;
+  }
+
+  &-pagination {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    bottom: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+      bottom: 40px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+
+    &-bullet {
+      flex: 0 0 30px;
+      max-width: 30px;
+      height: 3px;
+      background-color: $colors--white;
+      opacity: 0.5;
+
+      &--active {
+        opacity: 0.8;
+      }
+
+      + * {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &-slide {
+    @extend %slider-slide;
+
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      bottom: 0;
+      background-color: rgba($colors--purple-brown, 0.38);
+      z-index: 7;
+    }
+
+    .image {
+      @include media-breakpoint-down(sm) {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+      }
+
+      @include media-breakpoint-up(md) {
+        &:before {
+          $pb: calc(100% / var(--hsAR));
+          padding-top: $pb;
+        }
+      }
+    }
+  }
+
+  &-content {
+    position: absolute;
+    top: calcPercent(252, 700) + vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: vw(339, 375);
+    text-align: center;
+    color: $colors--white;
+    z-index: 8;
+
+    > * {
+      + * {
+        margin-top: 3px;
+
+        @include media-breakpoint-up(md) {
+          margin-top: 15px;
+        }
+
+        @include media-breakpoint-up(lg) {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      top: vw(205, 768);
+      max-width: vw(524, 768);
+    }
+
+    @include media-breakpoint-up(lg) {
+      top: vw(210, 1440);
+      max-width: vw(722, 1440);
+    }
+  }
+
+  &-description {
+    font-family: $ff-sans-serif;
+    font-weight: 300;
+    $fsMap: (
+      320px: 12px,
+      375px: 16px,
+      768px: 18px,
+      1440px: 28px
+    );
+
+    @include poly-fluid-sizing("font-size", $fsMap);
+  }
+}

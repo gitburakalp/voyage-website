@@ -1,0 +1,28 @@
+.image {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+    border: none;
+    transition: all 300ms 150ms ease-in;
+
+    &.lazy {
+      filter: blur(20px);
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@function calcPercent($value, $value2) {
+  @return ($value * 100) / $value2;
+}
+
+@function vw($pxValue, $viewportView) {
+  @return $pxValue / $viewportView * 100 + vw;
+}
+
+@function fluidSize($minVal, $maxVal, $minPixel, $maxPixel) {
+  @return calc(
+    #{$minVal}px + (#{$maxVal} - #{$minVal}) *
+      ((100vw - #{$minPixel}px) / (#{$maxPixel} - #{$minPixel}))
+  );
+}

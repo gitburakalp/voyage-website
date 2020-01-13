@@ -1,0 +1,25 @@
+.font {
+  &-weight {
+    &-medium {
+      font-weight: 500 !important;
+    }
+
+    &-bold {
+      &--rubik {
+        font-weight: 700 !important;
+      }
+    }
+  }
+}
+
+/*
+
+RUBIK FONT DETAILS
+
+300 LIGHT
+400 REGULAR
+500 MEDIUM
+700 BOLD
+900 BLACK
+
+*/

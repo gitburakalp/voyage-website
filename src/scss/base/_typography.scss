@@ -1,0 +1,37 @@
+.h1 {
+  $map: (
+    375px: 16px,
+    768px: 12px,
+    1440px: 16px
+  );
+
+  @include poly-fluid-sizing("font-size", $map);
+}
+
+.main {
+  &-title {
+    $fsMap: (
+      375px: 24px,
+      1440px: 60px
+    );
+    font-family: $ff-sans-serif;
+    @include poly-fluid-sizing("font-size", $fsMap);
+    font-weight: 500;
+    color: $colors--purple-brown;
+
+    + .main-description {
+      margin-top: 8px;
+    }
+  }
+
+  &-description {
+    $fsMap: (
+      375px: 14px,
+      1440px: 22px
+    );
+    font-family: $ff-sans-serif;
+    @include poly-fluid-sizing("font-size", $fsMap);
+    font-weight: 300;
+    color: $colors--warm-grey;
+  }
+}

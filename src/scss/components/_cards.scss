@@ -1,0 +1,39 @@
+.cards {
+  &--vertical {
+    @extend %cards;
+
+    .image {
+      $pt: 235 / 168 * 100%;
+      padding-top: $pt;
+
+      @include media-breakpoint-up(md) {
+        $pt: 320 / 236 * 100%;
+        padding-top: $pt;
+      }
+
+      @include media-breakpoint-up(lg) {
+        $pt: 497 / 360 * 100%;
+        padding-top: $pt;
+      }
+    }
+  }
+
+  &--horizontal {
+    @extend %cards;
+
+    .image {
+      $pt: 112 / 168 * 100%;
+      padding-top: $pt;
+
+      @include media-breakpoint-up(md) {
+        $pt: 155 / 236 * 100%;
+        padding-top: $pt;
+      }
+
+      @include media-breakpoint-up(lg) {
+        $pt: 232 / 360 * 100%;
+        padding-top: $pt;
+      }
+    }
+  }
+}

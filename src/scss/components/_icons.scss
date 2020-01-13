@@ -1,0 +1,38 @@
+.icons {
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &--hamburger {
+    background-image: url($root+"/Storage/svg/ico-menu.svg");
+    width: 24px;
+    height: 17px;
+
+    @include media-breakpoint-up(lg) {
+      width: 15px;
+      height: 14px;
+      background-image: url($root+"/Storage/svg/ico-menu-v2.svg");
+    }
+  }
+
+  &--phone {
+    &-circle {
+      background-image: url($root+"/Storage/svg/ico-phone-circle.svg");
+      width: 26px;
+      height: 26px;
+      margin-right: 8.5px;
+    }
+  }
+
+  &--search {
+    width: 20px;
+    height: 20px;
+    background-image: url($root+"/Storage/svg/ico-search.svg");
+
+    @include media-breakpoint-between(md, lg) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

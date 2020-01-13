@@ -1,0 +1,48 @@
+.both-cards-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include media-breakpoint-up(md) {
+    padding-left: vw(19, 768);
+    padding-right: vw(19, 768);
+  }
+
+  .row {
+    margin-left: -4.5px;
+    margin-right: -4.5px;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: vw(-15, 1440);
+      margin-right: vw(-15, 1440);
+    }
+
+    > [class*="col"] {
+      padding-left: 4.5px;
+      padding-right: 4.5px;
+
+      @include media-breakpoint-up(lg) {
+        padding-left: vw(15, 1440);
+        padding-right: vw(15, 1440);
+      }
+
+      @include media-breakpoint-down(sm) {
+        &:nth-child(n + 3) {
+          margin-top: 9px;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        .row {
+          height: 100%;
+          align-items: flex-start;
+
+          [class*="col-"] {
+            &:last-child {
+              margin-top: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

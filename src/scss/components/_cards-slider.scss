@@ -1,0 +1,75 @@
+.cards {
+  &-slider {
+    @extend %slider-container;
+
+    padding-left: vw(15, 375);
+    padding-right: vw(15, 375);
+
+    @include media-breakpoint-up(md) {
+      padding-left: vw(20, 768);
+      padding-right: vw(20, 768);
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-left: vw(9, 1440);
+      padding-right: vw(9, 1440);
+    }
+
+    &-content {
+      $fsMap: (
+        375px: 16px,
+        768px: 14px,
+        1440px: 20px
+      );
+      @include poly-fluid-sizing("font-size", $fsMap);
+      color: $colors--black;
+      font-weight: 400;
+
+      + * {
+        margin-top: 5px;
+      }
+    }
+
+    &-link {
+      $fsMap: (
+        375px: 14px,
+        1440: 16px
+      );
+      font-weight: 300;
+      line-height: 2.19;
+      color: $colors--dull-red;
+      text-decoration: underline !important;
+      padding-left: 0;
+      @include poly-fluid-sizing("font-size", $fsMap);
+    }
+  }
+
+  &-wrapper {
+    @extend %slider-wrapper;
+  }
+
+  &-slide {
+    @extend %slider-slide;
+
+    .image {
+      $pt: 229 / 345 * 100%;
+      padding-top: $pt;
+      border-radius: 4px;
+      margin-bottom: 10px;
+
+      @include media-breakpoint-only(md) {
+        margin-bottom: 4px;
+      }
+
+      @include media-breakpoint-up(md) {
+        $pt: 160 / 236 * 100%;
+        padding-top: $pt;
+      }
+
+      @include media-breakpoint-up(lg) {
+        $pt: 310 / 457 * 100%;
+        padding-top: $pt;
+      }
+    }
+  }
+}

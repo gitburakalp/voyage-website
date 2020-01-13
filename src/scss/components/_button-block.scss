@@ -1,0 +1,19 @@
+.button-block {
+  justify-content: center;
+  text-align: center;
+  padding-top: 40px;
+
+  .btn--primary-reverse {
+    border: 1px solid $colors--purple-brown;
+    border-radius: 2px;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 16px;
+
+    $widthMap: (
+      375px: 170px,
+      768px: 220px
+    );
+    @include poly-fluid-sizing("min-width", $widthMap);
+  }
+}
