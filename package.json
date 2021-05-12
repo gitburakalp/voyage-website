@@ -37,6 +37,6 @@
     "moment": "^2.24.0",
     "popper.js": "^1.15.0",
     "postcss-import": "^12.0.1",
-    "swiper": "^4.5.0"
+    "swiper": "^6.5.1"
   }
 }
